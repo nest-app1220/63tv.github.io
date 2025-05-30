@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスワード認証</title>
+    <style>
+        /* ページ全体を縦横中央に配置 */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* フォームのスタイル */
+        form {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            width: 50%;
+            /* 入力欄の幅を50%に設定 */
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="passwordForm">
+        <h2>パスワードを入力してください</h2>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" required>
+        <button type="submit">送信</button>
+    </form>
+
+    <script>
+        document.getElementById("passwordForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            var password = document.getElementById("password").value;
+            var correctPassword = "satoe0619"; // ここに正しいパスワードを設定
+
+            if (password === correctPassword) {
+                window.location.href = "https://63tv.web.fc2.com/31421413097.htm"; // パスワードが正しければリダイレクト
+            } else {
+                alert("パスワードが間違っています。");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
